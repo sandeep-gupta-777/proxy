@@ -4,7 +4,7 @@ const app = express();
 app.use(bodyParser.text({type: '*/*'}));
 const request = require('request');
 
-let npci_root = "https://103.114.161.148";
+let npci_root = "https://www.techonthenet.com/linux/commands/rm.php";
 let switch_root = "http://localhost:3000";
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
@@ -20,7 +20,7 @@ app.get('/', (req, res_from_client) =>{
             }, //todo: any encryption to add here, I think not.
         },
         (err, res, body) => {
-            res_from_client.send("hello world!", err, body);
+            res_from_client.send(JSON.stringify({err,body}));
             console.log('got response from upi',body);
             console.log('got error from upi',err);
         });
