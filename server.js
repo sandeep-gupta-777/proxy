@@ -11,13 +11,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 app.get('/', (req, res_from_client) =>{
     console.log("hello console");
     request.post({
-            url:npci_root,
-            body : "hello",
-            method:"POST",
-            rejectUnauthorized: false,
-            headers:{
-                'Content-Type': 'application/xml',
-            }, //todo: any encryption to add here, I think not.
+            url:npci_root
         },
         (err, res, body) => {
             res_from_client.send(JSON.stringify({err,body}));
