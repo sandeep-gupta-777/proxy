@@ -4,7 +4,7 @@ const app = express();
 app.use(bodyParser.text({type: '*/*'}));
 const request = require('request');
 
-let npci_root = "https://www.techonthenet.com/linux/commands/rm.php";
+let npci_root = "https://103.114.161.148";
 let switch_root = "http://localhost:3000";
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
