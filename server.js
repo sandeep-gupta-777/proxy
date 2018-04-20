@@ -12,7 +12,11 @@ app.get('/', (req, res_from_client) =>{
     console.log("hello console");
     request.post({
             url:npci_root,
-            body : "hello",
+            body : `<upi:ReqListPsp xmlns:upi="http://npci.org/upi/schema/">
+    <Head ver="1.0" ts="2018-03-07T17:58:53+05:30" orgId="400011" msgId="1GRDpegBbA5wY2r9c4PJ"/>
+    <Txn id="ICI6032208h075g19g71220160720110712" note="asdsad" refId="ICI6032208h075g19g71220160720110712" refUrl="" ts="2018-03-07T17:58:53+05:30" type="ListPsp"/>
+</upi:ReqListPsp>
+`,
             method:"POST",
             rejectUnauthorized: false,
             headers:{
