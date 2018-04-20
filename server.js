@@ -5,7 +5,7 @@ app.use(bodyParser.text({type: '*/*'}));
 const request = require('request');
 
 let npci_root = "https://103.14.161.148";
-let switch_root = "http://localhost:3000";
+let switch_root = "https://192.168.141.88:7171/upi/ReqPay/1.0/urn:txnid:ICI6032208h075g19g71220160720110712";
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 app.get('/', (req, res_from_client) =>{
