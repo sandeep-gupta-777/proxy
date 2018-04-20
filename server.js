@@ -9,6 +9,8 @@ let switch_root = "http://localhost:3000";
 
 app.get('/', (req, res) =>{
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+    res.send("hello client");
+    console.log("hello console");
     request.post({
             url:npci_root,
             body : "hello",
