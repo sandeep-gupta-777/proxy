@@ -7,7 +7,7 @@ const request = require('request');
 let npci_root = "https://103.114.161.148";
 let switch_root = "http://localhost:3000";
 
-app.get('/', (req, res) =>{
+app.get('/', (req, res_from_client) =>{
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
     res.send("hello client");
     console.log("hello console");
@@ -21,7 +21,7 @@ app.get('/', (req, res) =>{
             }, //todo: any encryption to add here, I think not.
         },
         (err, res, body) => {
-            res.send("hello world!", err, body);
+            res_from_client.send("hello world!", err, body);
             console.log('got response from upi',body);
             console.log('got error from upi',err);
         });
