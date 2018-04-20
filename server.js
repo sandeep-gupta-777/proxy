@@ -7,22 +7,25 @@ const request = require('request');
 let npci_root = "https://103.114.161.148";
 let switch_root = "http://localhost:3000";
 
-// app.post('/upi/ReqPay', (req, res) =>{
+app.get('/', (req, res) =>{
+    res.send("hello world!");
+
+};
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-    request.post(
-        {
-            url:npci_root,
-            body : "hello",
-            method:"POST",
-            rejectUnauthorized: false,
-            headers:{
-                'Content-Type': 'application/xml',
-            }, //todo: any encryption to add here, I think not.
-        },
-        (err, res, body) => {
-            console.log('got response from upi',body);
-            console.log('got error from upi',err);
-        });
+request.post(
+    {
+        url:npci_root,
+        body : "hello",
+        method:"POST",
+        rejectUnauthorized: false,
+        headers:{
+            'Content-Type': 'application/xml',
+        }, //todo: any encryption to add here, I think not.
+    },
+    (err, res, body) => {
+        console.log('got response from upi',body);
+        console.log('got error from upi',err);
+    });
 
     // res.send(req.body);
 // });
