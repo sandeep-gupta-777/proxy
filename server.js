@@ -1,9 +1,9 @@
 var https = require('https');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 var options = {
-    host: 'https://103.14.161.148/upi/ReqListPsp/1.0/urn:txnid:ICI6032208h075g19g71220160720110712',
-    port: 443,
-    path: '/',
+    host: '103.14.161.148',
+    port:443,
+    path: '/upi/ReqListPsp/1.0/urn:txnid:ICI6032208h075g19g71220160720110712',
     method: 'post',
     rejectUnauthorized: false,
     requestCert: true,
