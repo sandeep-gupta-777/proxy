@@ -1,3 +1,11 @@
+var builder = require('xmlbuilder');
+var xml = builder.create('root')
+    .ele('xmlbuilder')
+    .ele('repo', {'type': 'git'}, 'git://github.com/oozcitak/xmlbuilder-js.git')
+    .end({ pretty: true});
+
+// console.log(xml);
+
 const https = require('https');
 const str = `
 <?xml version="1.0" encoding="UTF-8"?>
@@ -60,7 +68,7 @@ var options = {
         'Content-Type': 'application/xml',
     },
     agent: false,
-    body: str
+    body: xml
 };
 
 const req = https.request(options, (res) => {
