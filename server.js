@@ -1,6 +1,4 @@
-var https = require('https');
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
+const https = require('https');
 const str = "" +
     "<?xml version=\"1.0\"?>\n" +
     "<root>\n" +
@@ -8,6 +6,7 @@ const str = "" +
     "    <repo type=\"git\">git://github.com/oozcitak/xmlbuilder-js.git</repo>\n" +
     "  </xmlbuilder>\n" +
     "</root>\n";
+
 var options = {
     host: '103.14.161.148',
     port:443,
@@ -22,24 +21,16 @@ var options = {
     body: str
 };
 
-var req;
+const req = https.request(options, (res) => {
+    console.log('statusCode:', res.statusCode);
+    console.log('headers:', res.headers);
 
-fs.writeFile(someFilename, '\ufeff' + html, { encoding: 'utf8' }, function(err) {
-    /* The actual byte order mark written to the file is EF BB BF */
-   req = https.request(options, function(res) {
-        res.on('data', function (chunk) {
-            console.log('BODY: ' + chunk);
-        });
+    res.on('data', (d) => {
+        process.stdout.write(d);
     });
-}
-
-
-
-req.on('error', function(e) {
-    console.log('problem with request: ' + e.message);
 });
 
-// write data to request body
-req.write('data\n');
-req.write('data\n');
+req.on('error', (e) => {
+    console.error(e);
+});
 req.end();
