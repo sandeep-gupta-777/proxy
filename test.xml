@@ -1,5 +1,3 @@
-const https = require('https');
-const str = `
 <?xml version="1.0" encoding="UTF-8"?>
 <upi:ReqPay xmlns:upi="http://npci.org/upi/schema/">
     <Head ver="1.0" ts="2018-03-07T17:58:54+05:30" orgId="400011" msgId="ICI39fb7c7fb31b41d998cd3390dad2aeae"/>
@@ -47,32 +45,3 @@ const str = `
         </Payee>
     </Payees>
 </upi:ReqPay>
-`;
-
-var options = {
-    host: '103.14.161.148',
-    port:443,
-    path: '/upi/ReqListPsp/1.0/urn:txnid:ICI6032208h075g19g71220160720110712',
-    method: 'post',
-    rejectUnauthorized: false,
-    requestCert: true,
-    headers:{
-        'Content-Type': 'application/xml',
-    },
-    agent: false,
-    body: str
-};
-
-const req = https.request(options, (res) => {
-    console.log('statusCode:', res.statusCode);
-    console.log('headers:', res.headers);
-
-    res.on('data', (d) => {
-        process.stdout.write(d);
-    });
-});
-
-req.on('error', (e) => {
-    console.error(e);
-});
-req.end();
