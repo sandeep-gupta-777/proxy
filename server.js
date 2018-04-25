@@ -6,7 +6,7 @@ var xml = builder.create('root')
     .end({ pretty: true});
 
 // console.log(xml);
-var cert = fs.readFileSync( 'certs/signer.crt' );
+var cert = fs.readFileSync( 'certs/signer.crt' );;
 var ca = fs.readFileSync( 'certs/ssl.crt' );
 
 const https = require('https');
@@ -82,10 +82,10 @@ var options = {
         'Content-Type': 'application/xml',
 	 //'Authorization': 'Basic ' + new Buffer(user + ':' + pass).toString('base64')
     },
-	auth: {
-        user: user,
-        pass: pass
-    }
+    // auth: {
+    //     user: user,
+    //     pass: pass
+    // }
     //cert: ca,
   //  ca: cert,
   //  rejectUnauthorized: false
