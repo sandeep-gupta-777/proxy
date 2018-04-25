@@ -7,8 +7,21 @@ var xml = builder.create('root')
 // console.log(xml);
 
 const https = require('https');
-const str = `
-<?xml version="1.0" encoding="UTF-8"?>
+var username = "vinod"; 
+var password = "12345";
+var authenticationHeader = "Basic " + new Buffer(username + ":" + password).toString("base64");
+
+const hbt = `
+<upi:ReqHbt xmlns:upi="http://npci.org/upi/schema/">
+    <Head ver="1.0" ts="2018-03-07T17:58:54+05:30" orgId="400011" msgId="ICI39fb7c7fb31b41d998cd3390dad2aeae"/>
+    <Txn id="ICI6032208h075g19g71220160720110712" note="taxi-bill" refId="ICI6032208h075g19g71220160720110712"
+         custRef="806617014630" refUrl="https://mystar.com/orderid" ts="2018-03-07T17:58:54+05:30" type="PAY">
+    </Txn>
+    <HbtMsg type="EODE" value="DATE"/>
+</upi:ReqHbt>
+
+`;
+const str = `<?xml version="1.0" encoding="UTF-8"?>
 <upi:ReqPay xmlns:upi="http://npci.org/upi/schema/">
     <Head ver="1.0" ts="2018-03-07T17:58:54+05:30" orgId="400011" msgId="ICI39fb7c7fb31b41d998cd3390dad2aeae"/>
     <Meta>
@@ -54,22 +67,21 @@ const str = `
             <Amount value="50.00" curr="INR"></Amount>
         </Payee>
     </Payees>
-</upi:ReqPay>
-`;
-
+</upi:ReqPay>`;
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+NODE_TLS_REJECT_UNAUTHORIZED=0;
 var options = {
     host: '103.14.161.148',
     port:443,
-    path: '/upi/ReqListPsp/1.0/urn:txnid:ICI6032208h075g19g71220160720110712',
-    method: 'post',
-    rejectUnauthorized: false,
-    requestCert: true,
+    path: '/upi/ReqHbt/1.0/urn:txnid:ICI6032208h075g19g71220160720110712',
+    method: 'POST',
     headers:{
-        'Content-Type': 'application/xml',
+        'Content-Type': 'application/xml',"Authorization" : authenticationHeader
     },
-    agent: false,
-    body: xml
+rejectUnauthorized: false
 };
+
+options.agent = new https.Agent(options);
 
 const req = https.request(options, (res) => {
     console.log('statusCode:', res.statusCode);
@@ -79,7 +91,7 @@ const req = https.request(options, (res) => {
         process.stdout.write(d);
     });
 });
-
+req.write(hbt);
 req.on('error', (e) => {
     console.error(e);
 });
