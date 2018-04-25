@@ -5,6 +5,8 @@ var xml = builder.create('root')
     .end({ pretty: true});
 
 // console.log(xml);
+var cert = fs.readFileSync( 'certs/signer.crt' );
+var ca = fs.readFileSync( 'certs/ssl.crt' );
 
 const https = require('https');
 var username = "vinod"; 
@@ -78,7 +80,9 @@ var options = {
     headers:{
         'Content-Type': 'application/xml',"Authorization" : authenticationHeader
     },
-rejectUnauthorized: false
+    cert: cert,
+    ca: ca,
+    rejectUnauthorized: false
 };
 
 options.agent = new https.Agent(options);
