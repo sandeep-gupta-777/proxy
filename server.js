@@ -1,4 +1,5 @@
 var builder = require('xmlbuilder');
+var fs = require('fs');
 var xml = builder.create('root')
     .ele('xmlbuilder')
     .ele('repo', {'type': 'git'}, 'git://github.com/oozcitak/xmlbuilder-js.git')
