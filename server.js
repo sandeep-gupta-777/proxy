@@ -10,9 +10,9 @@ var cert = fs.readFileSync( 'certs/signer.crt' );
 var ca = fs.readFileSync( 'certs/ssl.crt' );
 
 const https = require('https');
-var username = "vinod"; 
-var password = "12345";
-var authenticationHeader = "Basic " + new Buffer(username + ":" + password).toString("base64");
+var user = "sandeep";
+var pass = "12345"
+//var authenticationHeader = "Basic " + new Buffer(username + ":" + password).toString("base64");
 
 const hbt = `
 <upi:ReqHbt xmlns:upi="http://npci.org/upi/schema/">
@@ -71,22 +71,27 @@ const str = `<?xml version="1.0" encoding="UTF-8"?>
         </Payee>
     </Payees>
 </upi:ReqPay>`;
-//process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-NODE_TLS_REJECT_UNAUTHORIZED=0;
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+//NODE_TLS_REJECT_UNAUTHORIZED=0;
 var options = {
     host: '103.14.161.148',
     port:443,
     path: '/upi/ReqHbt/1.0/urn:txnid:ICI6032208h075g19g71220160720110712',
     method: 'POST',
     headers:{
-        'Content-Type': 'application/xml',"Authorization" : authenticationHeader
+        'Content-Type': 'application/xml',
+	 //'Authorization': 'Basic ' + new Buffer(user + ':' + pass).toString('base64')
     },
-    cert: cert,
-    ca: ca,
-    rejectUnauthorized: false
+	auth: {
+        user: user,
+        pass: pass
+    }
+    //cert: ca,
+  //  ca: cert,
+  //  rejectUnauthorized: false
 };
 
-options.agent = new https.Agent(options);
+//options.agent = new https.Agent(options);
 
 const req = https.request(options, (res) => {
     console.log('statusCode:', res.statusCode);
