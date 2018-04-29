@@ -29,6 +29,10 @@ host: '103.14.161.148',
  port:443,
     path: '/upi/ReqHbt/1.0/urn:txnid:ICI6032208h075g19g71220160720110712',
     method: 'POST',
+	headers: {
+      'Content-Type': 'application/xml',
+      //'Content-Length': hbt.length,
+  } ,
    checkServerIdentity: function (host, cert) {
 console.log('inside check server id')
 debugger;
