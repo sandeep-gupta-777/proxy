@@ -90,8 +90,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="23" column="155" selection-start-line="23" selection-start-column="155" selection-end-line="23" selection-end-column="155" />
+            <state relative-caret-position="163">
+              <caret line="23" column="1651" lean-forward="true" selection-start-line="23" selection-start-column="1651" selection-end-line="23" selection-end-column="1651" />
             </state>
           </provider>
         </entry>
@@ -272,7 +272,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38401000" />
+    <option name="totallyTimeSpent" value="38708000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -288,7 +288,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.89830506" visible="true" weight="0.17113096" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.89830506" weight="0.17113096" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32874355" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -695,8 +695,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="23" column="155" selection-start-line="23" selection-start-column="155" selection-end-line="23" selection-end-column="155" />
+        <state relative-caret-position="163">
+          <caret line="23" column="1651" lean-forward="true" selection-start-line="23" selection-start-column="1651" selection-end-line="23" selection-end-column="1651" />
         </state>
       </provider>
     </entry>
