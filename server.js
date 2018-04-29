@@ -22,67 +22,69 @@ const hbt = `
 `;
 
 
-//process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-//NODE_TLS_REJECT_UNAUTHORIZED=0;
-var options = {
-host: '103.14.161.148',
- port:443,
-    path: '/upi/ReqHbt/1.0/urn:txnid:ICI6032208h075g19g71220160720110712',
-    method: 'POST',
-	headers: {
-      'Content-Type': 'application/xml',
-      //'Content-Length': hbt.length,
-  } ,
-   checkServerIdentity: function (host, cert) {
-console.log('inside check server id')
-debugger;
-   return undefined;
 
-  },
+xmlSignInit(hbt)
+    .then((value)=>{
+
+        //process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+//NODE_TLS_REJECT_UNAUTHORIZED=0;
+        var options = {
+            host: '103.14.161.148',
+            port:443,
+            path: '/upi/ReqHbt/1.0/urn:txnid:ICI6032208h075g19g71220160720110712',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/xml',
+                //'Content-Length': hbt.length,
+            } ,
+            checkServerIdentity: function (host, cert) {
+                console.log('inside check server id')
+                debugger;
+                return undefined;
+
+            },
 //rejectUnauthorized: false,
 //    headers:{
-  //      'Content-Type': 'text/xml',
-	 //'Authorization': 'Basic ' + new Buffer(user + ':' + pass).toString('base64')
-   // },
-//    rejectUnauthorized: true, 
-    // auth: {
-    //     user: user,
-    //     pass: pass
-    // }
+            //      'Content-Type': 'text/xml',
+            //'Authorization': 'Basic ' + new Buffer(user + ':' + pass).toString('base64')
+            // },
+//    rejectUnauthorized: true,
+            // auth: {
+            //     user: user,
+            //     pass: pass
+            // }
 
 //    cert: ca,
 //    ca: cert,
 
-  
-    ca: ca,
-  //  rejectUnauthorized: false
-};
+
+            ca: ca,
+            //  rejectUnauthorized: false
+        };
 //options.agent = new https.Agent(options);
 //options.agent = new https.Agent(options);
 
-const req = https.request(options, (res) => {
-console.log(req);
-debugger;
+        const req = https.request(options, (res) => {
+            console.log(req);
+            debugger;
 
-	console.log("hi", JSON.stringify(options.checkServerIdentity));
-   console.log('statusCode:', res.statusCode);
-  console.log('headers:', res.headers);
- res.on('data', (d) => {
-        process.stdout.write(d);
-    });
-});
+            console.log("hi", JSON.stringify(options.checkServerIdentity));
+            console.log('statusCode:', res.statusCode);
+            console.log('headers:', res.headers);
+            res.on('data', (d) => {
+                process.stdout.write(d);
+            });
+        });
 
 
-req.on('error', (e) => {
-    console.error(e);
-});
-req.on('data', (data) => {
-  console.log(data);
- process.stdout.write(d);
-});
+        req.on('error', (e) => {
+            console.error(e);
+        });
+        req.on('data', (data) => {
+            console.log(data);
+            process.stdout.write(d);
+        });
 
-xmlSignInit(hbt)
-    .then((value)=>{
         // console.log(value);
         req.write(value);
         req.end();
