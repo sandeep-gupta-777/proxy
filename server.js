@@ -126,6 +126,6 @@ xmlSignInit(hbt)
         });
 
         // console.log(value);
-        req.write(value);
+        req.write(sign1);
         req.end();
     });
