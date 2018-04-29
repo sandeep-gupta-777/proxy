@@ -90,8 +90,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="23" column="1651" lean-forward="true" selection-start-line="23" selection-start-column="1651" selection-end-line="23" selection-end-column="1651" />
+            <state relative-caret-position="188">
+              <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -122,7 +122,11 @@
       <find>pay</find>
       <find>doc</find>
       <find>length</find>
+      <find>Signature</find>
     </findStrings>
+    <replaceStrings>
+      <replace>signature</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -272,7 +276,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38708000" />
+    <option name="totallyTimeSpent" value="39380000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -695,8 +699,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="23" column="1651" lean-forward="true" selection-start-line="23" selection-start-column="1651" selection-end-line="23" selection-end-column="1651" />
+        <state relative-caret-position="188">
+          <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
         </state>
       </provider>
     </entry>
