@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>XADESJS Signature Sample</title>
+</head>
+
+<body>
+<pre id="signature"><code></code></pre>
+<script src="https://peculiarventures.github.io/pv-webcrypto-tests/src/promise.js"></script>
+<script src="https://peculiarventures.github.io/pv-webcrypto-tests/src/webcrypto-liner.min.js"></script>
+<script src="https://peculiarventures.github.io/pv-webcrypto-tests/src/asmcrypto.js"></script>
+<script src="https://peculiarventures.github.io/pv-webcrypto-tests/src/elliptic.js"></script>
+<script type="text/javascript" src="dist/xades.js"></script>
+<script type="text/javascript">
+    // Generate RSA key pair
+    var privateKey, publicKey;
+    window.crypto.subtle.generateKey(
+        {
+            name: "ECDSA",
+            namedCurve: "P-256"
+        },
+        false, //whether the key is extractable (i.e. can be used in exportKey)
+        ["sign", "verify"] //can be any combination of "sign" and "verify"
+    )
+        .then(function (keyPair) {
+            // Push ganerated keys to global variable
+            privateKey = keyPair.privateKey;
+            publicKey = keyPair.publicKey;
+            // Call sign function
+            var xmlString = `
+<upi:ReqHbt xmlns:upi="http://npci.org/upi/schema/">
+    <Head ver="1.0" ts="2018-03-07T17:58:54+05:30" orgId="400011" msgId="ICI39fb7c7fb31b41d998cd3390dad2aeae"/>
+    <Txn id="ICI6032208h075g19g71220160720110712" note="taxi-bill" refId="ICI6032208h075g19g71220160720110712"
+         custRef="806617014630" refUrl="https://mystar.com/orderid" ts="2018-03-07T17:58:54+05:30" type="PAY">
+    </Txn>
+    <HbtMsg type="EODE" value="DATE"/>
+</upi:ReqHbt>
+
+
+            `;
+            return SignXml(xmlString, keyPair, { name: "ECDSA", hash: { name: "SHA-1" } });
+        })
+        .then(function (signedDocument) {
+            document.getElementById("signature").textContent = signedDocument;
+            console.log("Signed document:\n\n", signedDocument);
+        })
+        .catch(function (e) {
+            console.error(e);
+        });
+
+    function SignXml(xmlString, keys, algorithm) {
+        var signedXml;
+        return Promise.resolve()
+            .then(() => {
+                var xmlDoc = XAdES.Parse(xmlString);
+                signedXml = new XAdES.SignedXml();
+
+                return signedXml.Sign(               // Signing document
+                    algorithm,                              // algorithm
+                    keys.privateKey,                        // key
+                    xmlDoc,                                 // document
+                    {                                       // options
+                        keyValue: keys.publicKey,
+                        references: [
+                            { hash: "SHA-256", transforms: ["enveloped"] }
+                        ],
+                        productionPlace: {
+                            country: "Country",
+                            state: "State",
+                            city: "City",
+                            code: "Code",
+                        },
+                        signerRoles: {
+                            claimed: ["Some role"]
+                        }
+                    })
+            })
+            .then(() => signedXml.toString());
+    }
+</script>
+</body>
+
+</html>
