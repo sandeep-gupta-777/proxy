@@ -68,7 +68,7 @@ debugger;
     });
 });
 
-req.write(hbt);
+
 req.on('error', (e) => {
     console.error(e);
 });
@@ -80,5 +80,6 @@ req.on('data', (data) => {
 xmlSignInit(hbt)
     .then((value)=>{
         // console.log(value);
+        req.write(value);
         req.end();
     });
