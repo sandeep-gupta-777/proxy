@@ -27,7 +27,7 @@ const sign1 = `<?xml version="1.0" encoding="UTF-8" standalone="no"?><upi:ReqHbt
 
 
 xmlSignInit(hbt)
-    .then((value)=>{
+    .then((signedXml)=>{
 
         //process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 //NODE_TLS_REJECT_UNAUTHORIZED=0;
@@ -84,6 +84,6 @@ xmlSignInit(hbt)
         });
 
         // console.log(value);
-        req.write(sign1);
+        req.write(signedXml);
         req.end();
     });

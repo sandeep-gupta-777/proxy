@@ -1,32 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <upi:ReqHbt xmlns:upi="http://npci.org/upi/schema/">
-    <Head msgId="400011" orgId="400011" ts="2016-03-02T09:01:51.771Z" ver="1.0"/>
-    <Txn id="600012" note="Heartbeat" type="Hbt"/>
-    <HbtMsg type="ALIVE" value="NA"/>
-    <signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <signatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
-            <Reference URI="">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
-                <DigestValue>mXMWVPNSFvWqvOKSWrVsKvZr2LAoXvzhSI3uZf+QOTA=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <signatureValue>
-            RZcmKI9IT6Mn4AmXiDRIJrSR3vyiWF5hsbblFBuh407kEnNlv34IkO9QydxBG/8NKobM9iDP+6WMPv0qAkgst8e3MStqf5Zjh7v39oBLJJUkjjrouatOmsAefsRwbHgtQ50zAgVNMXNmH1KeC1mk4gHGgBZUEHAoqfp69hlVIUWlMgzgutzpX19WPIVWHVqYSNFmgJZ+uKHDsDpTRVHfaii8Yklbf8vtG+gf/PbLCXpWZEDxLgR5U756GlsOzaOQE4DeN42wktBK4sPO+iGk4Onl6ty5seov7HT4Ir+5g5b0jRc3NgZvski5/xCH/Fgay4TImhdy3bSxu0d67b7eCw==
-        </signatureValue>
-        <KeyInfo>
-            <KeyValue>
-                <RSAKeyValue>
-                    <Modulus>
-                        py5eZwVTwgVl2LCu943Or/uMYjFhhu889AursIAggkjm1cQM9sz+nyZEPA5H2mjD35vqlVDMetdwxTCBJKwpflsMugFVE3r7ejP8c/gEp3hi7jABILsRYw5AYifK1r1Fo9iredP4ejbOFp0vJlmJpzeWragDkY1Wpog0+7HIB2Sn5ZPcF4DmgtZ9Luo18aLIzVetYRPoMltgt13y5nM+x80s9x18H+dGuO4b0rHLPj2gDODIndSziymWT7sHtA/FRxjZ45wW5D2MpUns3VI4s0AemFBNJY4mmzMKgIH73SXgeX+zbfwcU2uFpV9WL7IYhQQE5tzXB31HcvLc8QH4Dw==
-                    </Modulus>
-                    <Exponent>AQAB</Exponent>
-                </RSAKeyValue>
-            </KeyValue>
-        </KeyInfo>
-    </signature>
-</upi:ReqHbt>
+    <Head ver="1.0" ts="2018-03-07T17:58:54+05:30" orgId="400011" msgId="ICI39fb7c7fb31b41d998cd3390dad2aeae"/>
+    <Txn id="ICI6032208h075g19g71220160720110712" note="taxi-bill" refId="ICI6032208h075g19g71220160720110712" custRef="806617014630" refUrl="https://mystar.com/orderid" ts="2018-03-07T17:58:54+05:30" type="PAY">
+    </Txn>
+    <HbtMsg type="EODE" value="DATE"/>
+    <ds:Signature Id="id-fe2e29c64f73" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><ds:Reference><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>caBMSaEn4+/07JbQV95QgSlTaxgbSTGvkioz2Id5PWs=</ds:DigestValue></ds:Reference><ds:Reference URI="#xades-id-fe2e29c64f73" Type="http://uri.etsi.org/01903#SignedProperties"><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>MYpZZghbz96FDlsBavgUg/3HX7w=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>tvnazztZp4Xkoxb+xTiycifBQm8A0Y8csQ+Lr7M9pK9jtYeeeiO+kSx8NPQrqSE9pfbAIm5Pmyc6jOoCYLWhX6QlCC+51itCzzJGqPXGLL1mPDk8/hRoHae3QOf3lVkMBzrdhS1XPjIoOfVGei5QLcmCaHB++mKBxIn5NPAo28ZEjM3PShTJv5cGfZ4zE/+thqFDS+JqwxAWAlk+uewccwKa47B38rij3UjDLIfbQXpinvXGz/IvC40pw2pc3FdRrcH7FHrZmxOH0GamU5ltEfwDIGpsptOrQY0k3zzS7Y33d0/hL9zL8z3gOuPx+dUb06MEwFbhuhppjEQNAmcCbQ==</ds:SignatureValue><ds:KeyInfo><ds:KeyValue><ds:RSAKeyValue><ds:Modulus>vmJAxLppZEuV3vVVRDTv98bIrrZUTScCqT4cHBWMDqpeR7uFjgC6+jV1xG1rn5Wbf3dJMbWJA85eV2jCpBinHj8qBPWEC/YGWolvSxHydcDfQoxhCOSu/+r67dCiAWXukG9jw5qswEeOEwyr3IDg2spX9/95puj/FRKpc6UI9eQhyFgBje9UH6KKkDflkXFpBZoUfFfEGxrEeS/fCx1dF5NnEDWj3vwDO3SwBZXISwUWVHG9iu5BF/DIAtMu0V0JLN1k+sHjyf93y8pZk+ZRa8MoDfS6ujvR3kJ/UqBmlfL8dML1mJWOWhtgxqFyZy4EnjQabpXCFfz1zikA52+DzQ==</ds:Modulus><ds:Exponent>AQAB</ds:Exponent></ds:RSAKeyValue></ds:KeyValue></ds:KeyInfo><ds:Object><xades:QualifyingProperties Target="#id-fe2e29c64f73" xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"><xades:SignedProperties Id="xades-id-fe2e29c64f73"><xades:SignedSignatureProperties><xades:SigningTime>2018-04-30T05:27:02.944Z</xades:SigningTime><xades:SigningCertificate><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>MMDWZwoNA5GdHGp1b5wgEeH7vCWCKBjjQOnyPQl+UVc=</ds:DigestValue></xades:CertDigest><xades:IssuerSerial><ds:X509IssuerName>C=IN, ST=TamilNadu, L=Chennai, O=NPCI, OU=UPI, CN=upiuat.npci.org.in, E=vibeeth@npci.org.in</ds:X509IssuerName><ds:X509SerialNumber>9456086651788219289</ds:X509SerialNumber></xades:IssuerSerial></xades:Cert></xades:SigningCertificate><xades:SignaturePolicyIdentifier><xades:SignaturePolicyImplied/></xades:SignaturePolicyIdentifier><xades:SignatureProductionPlace><xades:City>City</xades:City><xades:StateOrProvince>State</xades:StateOrProvince><xades:PostalCode>Code</xades:PostalCode><xades:CountryName>Country</xades:CountryName></xades:SignatureProductionPlace></xades:SignedSignatureProperties></xades:SignedProperties></xades:QualifyingProperties></ds:Object></ds:Signature></upi:ReqHbt>
