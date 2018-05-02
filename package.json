@@ -9,6 +9,7 @@
     "express": "^4.16.3",
     "node-webcrypto-ossl": "^1.0.36",
     "request": "^2.85.0",
+    "uuid": "^3.2.1",
     "xadesjs": "^2.0.12",
     "xmlbuilder": "^9.0.7"
   },
