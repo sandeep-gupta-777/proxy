@@ -4,8 +4,8 @@ const uuidv1 = require('uuid/v1');
 // const xmlSignInit = require("./xml-sign");
 // var cert = fs.readFileSync( 'certs/signer.crt' );
 var ca = fs.readFileSync( 'certs/ssl.crt' );
-
-const https = require('https');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+ https = require('https');
 // let uuidStr = "ICI"+ uuidv1().replace(/-/g, "");
  let uuidStr = fs.readFileSync('.//sign-java//sign//src//id.txt').toString();
  let signedXML_java = fs.readFileSync('.//sign-java//sign//src//ReqHbt-signed.xml').toString();
@@ -20,14 +20,14 @@ Promise.resolve()
             method: 'POST',
             headers: {
                 'Content-Type': 'application/xml',
-                'Content-Length': signedXML_java.length,
+//                'Content-Length': signedXML_java.length,
             } ,
-            checkServerIdentity: function (host, cert) {
-                console.log('inside check server id')
-                debugger;
-                return undefined;
+//            checkServerIdentity: function (host, cert) {
+  //              console.log('inside check server id')
+    //            debugger;
+      //          return undefined;
 
-            },
+        //    },
                 ca:ca,
             };
             //options.agent = new https.Agent(options);
