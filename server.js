@@ -1,13 +1,16 @@
 var builder = require('xmlbuilder');
 var fs = require('fs');
 const uuidv1 = require('uuid/v1');
-const xmlSignInit = require("./xml-sign");
+// const xmlSignInit = require("./xml-sign");
 var cert = fs.readFileSync( 'certs/signer.crt' );
 var ca = fs.readFileSync( 'certs/ssl.crt' );
 
 const https = require('https');
-//let uuidStr = "ICI"+ uuidv1().replace(/-/g, "");
-let uuidStr = 'ICI56d011c057ad11e8823c9b61d45d2b91';;
+// let uuidStr = "ICI"+ uuidv1().replace(/-/g, "");
+ let uuidStr = fs.readFileSync('.//sign-java//sign//src//id.txt').toString();
+ let signedXML_java = fs.readFileSync('.//sign-java//sign//src//ReqHbt-signed.xml').toString();
+ console.log(uuidStr)
+ console.log(signedXML_java)
 Promise.resolve()
     .then((signedXml)=>{
         var options = {

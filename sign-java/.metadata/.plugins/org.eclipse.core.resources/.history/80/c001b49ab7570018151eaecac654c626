@@ -1,0 +1,7 @@
+<upi:ReqHbt xmlns:upi="http://npci.org/upi/schema/">
+    <Head ver="1.0" ts="2018-03-07T17:58:54+05:30" orgId="400011" msgId="ICI46d011c057ad11e8823c9b61d45d2b90"/>
+    <Txn id="ICI46d011c057ad11e8823c9b61d45d2b90" note="taxi-bill" refId="ICI46d011c057ad11e8823c9b61d45d2b90"
+         custRef="806717014630" refUrl="https://mystar.com/orderid" ts="2018-03-07T17:58:54+05:30" type="PAY">
+    </Txn>
+    <HbtMsg type="EODE" value="DATE"/>
+</upi:ReqHbt>
