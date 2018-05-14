@@ -20,7 +20,7 @@ Promise.resolve()
             method: 'POST',
             headers: {
                 'Content-Type': 'application/xml',
-                //'Content-Length': hbt.length,
+                'Content-Length': signedXML_java.length,
             } ,
             checkServerIdentity: function (host, cert) {
                 console.log('inside check server id')
