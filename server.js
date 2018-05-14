@@ -2,7 +2,7 @@ var builder = require('xmlbuilder');
 var fs = require('fs');
 const uuidv1 = require('uuid/v1');
 // const xmlSignInit = require("./xml-sign");
-var cert = fs.readFileSync( 'certs/signer.crt' );
+// var cert = fs.readFileSync( 'certs/signer.crt' );
 var ca = fs.readFileSync( 'certs/ssl.crt' );
 
 const https = require('https');
