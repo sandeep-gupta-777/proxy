@@ -9,8 +9,8 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 // let uuidStr = "ICI"+ uuidv1().replace(/-/g, "");
  let uuidStr = fs.readFileSync('.//sign-java//sign//src//id.txt').toString();
  let signedXML_java = fs.readFileSync('.//sign-java//sign//src//ReqHbt-signed.xml').toString();
- console.log(uuidStr)
- console.log(signedXML_java)
+// console.log(uuidStr)
+// console.log(signedXML_java)
 Promise.resolve()
     .then((signedXml)=>{
         var options = {
@@ -34,7 +34,7 @@ Promise.resolve()
             //options.agent = new https.Agent(options);
             
                     const req = https.request(options, (res) => {
-                        console.log(req.path);
+                        console.log('===>>>>>>>',req.path);
                         debugger;
                         res.on('data', (d) =>
                             {
@@ -52,8 +52,11 @@ Promise.resolve()
                         process.stdout.write(d);
                     });
             
+console.log('============================================================================================')
                     console.log(signedXML_java);
                     req.write(signedXML_java);
                     req.end();
+console.log('============================================================================================')
+
 });
             
