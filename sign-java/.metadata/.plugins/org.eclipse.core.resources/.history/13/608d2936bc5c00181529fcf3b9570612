@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><upi:ReqHbt xmlns:upi="http://npci.org/upi/schema/">
+    <Head msgId="ICI46d011c057ad11e8823c9b61d45d2b90" orgId="400011" ts="2018-03-07T17:58:54+05:30" ver="1.0"/>
+    <Txn custRef="806717014630" id="ICI46d011c057ad11e8823c9b61d45d2b90" note="taxi-bill" refId="ICI46d011c057ad11e8823c9b61d45d2b90" refUrl="https://mystar.com/orderid" ts="2018-03-07T17:58:54+05:30" type="PAY">
+    </Txn>
+    <HbtMsg type="EODE" value="DATE"/>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><DigestValue>qZGfjMXAu+9j52NbMP+RdDOUMg0mze85bliyVY3gkGY=</DigestValue></Reference></SignedInfo><SignatureValue>vR3IOetXV6p1iDdz1arfyI+C5D/jra89vxN6FzWH1rvRwL6GZU6qMWVClYhbpbJi7og6ruWKRLZP
+x0gzi8RWIKDZ1+9Yik2lKM6lxF3cbotrvo+bhpT3ZYXFB8kG/yH14J1mHmme1Izf46kVLX6hwcPJ
+TmH3229VRf0H+AU6hwJ2f76NrSeGpBx5epSyAoAVoReHo37fJu8jbWymo8Zhyhko/GU92I0rmRLg
+ZR7tIxJDl8usp+wweYTujkuo7vzKu6b/lMHxXOwpkmGm0FEjIZ7WfwBopO3b5JwN4MwkxcirfGBK
+1bldCkx2yDK266Crt9h1dv+Le+crrUtoCtdmaw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xUXEzCl9+ATEj5WG0f5yRwbJ+AahWsMlKrefP62DBeAoJj32gKPdZ6PP3cJwIu7ffmidChV8PuUn
+N1LXqURtlixXoMVV060FUH6MOFnVUqO/IAy1sYV3Gcz4G7sy+6Aml9iqXDi1NA+Mcq05RWm8sWrg
+gvSUISgOx+K+s3t6oMunR4Q3a44X0qVBNuKaqmRUI9MAUoxu1SfdTOr5gWfcCsIy1h8JPvJarpOM
+E1uY6TGerdtj1M8ft/Q2scKoIAHiIYujSpxbZSha0kEwzMT3BcFTkwJ4WBJhPgpJO73vpEP3SzBL
+iTF5bDfgDCYZiJKN9sFsPgKnJ9/gy0GWq29fmQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue></KeyInfo></Signature></upi:ReqHbt>
