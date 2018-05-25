@@ -8,12 +8,12 @@ const http = require('http');
 
 //=============================== response listener
 
-http.createServer(function (req, res) {
-    console.log("======req from NPCI========");
-    console.log(req.body);
-    res.write('Hello World!'); //write a response to the client
-    res.end(); //end the response
-  }).listen(8080);
+// http.createServer(function (req, res) {
+//     console.log("======req from NPCI========");
+//     console.log(req.body);
+//     res.write('Hello World!'); //write a response to the client
+//     res.end(); //end the response
+//   }).listen(8080);
 //===============================
 
 
