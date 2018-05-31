@@ -17,7 +17,7 @@ const http = require('http');
 //===============================
 
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";;
 
  
  let uuidStr = fs.readFileSync('.//sign-java//sign//src//id.txt').toString();
